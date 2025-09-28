@@ -1,0 +1,6 @@
+image:
+  repository: ghcr.io/yeencloud/svc-mail
+  tag: latest
+
+resources:
+  replicas: 1

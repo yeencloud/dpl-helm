@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-mail
+spec:
+  replicas: {{ .Values.resources.replicas }}
+  selector:
+    matchLabels:
+      type: infra
+      app: svc-mail
+  template:
+    metadata:
+      labels:
+        type: infra
+        app: svc-mail
+    spec:
+      containers:
+        - name: svc-mail
+          image: "{{.Values.image.repository}}:{{.Values.image.tag}}
