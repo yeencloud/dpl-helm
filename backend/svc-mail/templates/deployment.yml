@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: svc-mail
-          image: "{{.Values.image.repository}}:{{.Values.image.tag}}
+          image: "{{.Values.image.repository}}:{{.Values.image.tag}}"
