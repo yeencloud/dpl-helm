@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/yeencloud/svc-mail
-  tag: latest:arm64
+  tag: latest-arm64
 
 resources:
   replicas: 1
