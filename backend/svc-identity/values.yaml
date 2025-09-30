@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/yeencloud/svc-mail
+  repository: ghcr.io/yeencloud/svc-identity
   tag: latest
 
 resources:
