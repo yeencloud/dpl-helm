@@ -2,19 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: svc-identity
+  name: "{{ .Chart.Name }}"
 spec:
   replicas: {{ .Values.resources.replicas }}
   selector:
     matchLabels:
       type: infra
-      app: svc-identity
+      app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
         type: infra
-        app: svc-identity
+        app: {{ .Chart.Name }}
     spec:
       containers:
-        - name: svc-identity
+        - name: {{ .Chart.Name }}
           image: "{{.Values.image.repository}}:{{.Values.image.tag}}"
+          envFrom:
+            - configMapRef:
+                name: {{.Chart.Name}}
