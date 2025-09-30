@@ -20,4 +20,4 @@ spec:
           image: "{{.Values.image.repository}}:{{.Values.image.tag}}"
           envFrom:
             - configMapRef:
-                name: {{.Chart.Name}}
+                name: {{.Chart.Name}}-metrics
