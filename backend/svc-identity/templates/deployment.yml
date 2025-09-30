@@ -13,8 +13,8 @@ spec:
     metadata:
       labels:
         type: infra
-        app: svc-mail
+        app: svc-identity
     spec:
       containers:
-        - name: svc-mail
+        - name: svc-identity
           image: "{{.Values.image.repository}}:{{.Values.image.tag}}"
