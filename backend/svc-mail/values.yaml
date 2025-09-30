@@ -3,4 +3,5 @@ image:
   tag: latest
 
 resources:
+  node: compute
   replicas: 2

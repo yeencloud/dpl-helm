@@ -14,6 +14,8 @@ spec:
       labels:
         type: infra
         app: {{ .Chart.Name }}
+      annotations:
+        checksum/metrics-config: {{ include (print $.Template.BasePath "/config.metrics.yml") . | sha256sum }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -21,3 +23,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{.Chart.Name}}-metrics
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: yeencloud.io/nodetype
+                    operator: In
+                    values:
+                      - compute
