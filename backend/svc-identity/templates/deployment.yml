@@ -28,7 +28,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                  - key: yeencloud.io/nodetype
+                  - key: yeencloud.io/role
                     operator: In
                     values:
                       - compute
